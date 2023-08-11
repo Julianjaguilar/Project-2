@@ -13,14 +13,8 @@ function eventData() {
       console.log(eventDate[0]);
     })};
 eventData();
-  /*
-    fetch(apiUrl)
-     .then(function(response){
-        return response.JSON;
-     }) 
-     .then (function(data){
-        console.log(data);
-     })
-      };
 
-eventData()*/
+
+/* example of api url with city and limit included
+https://app.ticketmaster.com/discovery/v2/events.json?city=Austin&size=23&apikey=TE2ijqVVjWf7vbSiCOY5HV8NLRAqriKf
+  */
