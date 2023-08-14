@@ -1,51 +1,35 @@
-const loginFormHandler = async (event) => {
-    event.preventDefault();
+// this  is the Handler function for the tech blog login form submission
+const techLoginFormHandler = async (event) => {
+  event.preventDefault();
+ 
+  // this will Get the values of the username and password input fields
+  const username = document.querySelector('#username-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
   
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to log in.');
-      }
+  // If the input fields have values
+  if (username && password) {
+      
+      // Send a POST request to the login endpoint with the input values as JSON data
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ username, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    
+    // If the request was successful, GOO to the homepage
+    if (response.ok) {
+      document.location.replace('/'); // When successful, load the homepage
+    } else {
+            
+      // If the request was unsuccessful, show an alert
+      alert('Failed to log in!!'); 
     }
-  };
-  
-  const signupFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (username && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ username, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to sign up.');
-      }
-    }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-  
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
-  
+  }
+};
+
+
+// Event listener for the tech login form
+const chessLoginForm = document.querySelector('.tech-login-form');
+if (chessLoginForm) {
+  chessLoginForm.addEventListener('submit', chessLoginFormHandler);
+}
