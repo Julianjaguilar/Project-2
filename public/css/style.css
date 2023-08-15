@@ -3,8 +3,8 @@
 }
 
 .post-container:hover {
-  border-right: 1em solid #656565;
-  background-color: rgba(126, 126, 126, 0.2);
+  border-right: 1em solid #9a8686;
+  background-color: rgba(77, 76, 76, 0.2);
   border-radius: 0.5em;
 }
 
