@@ -4,5 +4,9 @@ node_modules
 package-lock.json
 .vscode
 .DS_Store
+<<<<<<< HEAD
 .env
 .env
+=======
+.env
+>>>>>>> ad60ca98cd20a9c745f40ec1fcf53e0579a21365
