@@ -37,6 +37,11 @@ User.init(
         len: [8],
       },
     },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
   },
   {
     

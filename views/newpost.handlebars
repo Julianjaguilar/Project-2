@@ -1,18 +1,38 @@
 <div class="container mt-5">
-  <h2 class="mb-4">Create a Blog Contribution based on your experiance and knowledge .</h2>
+  <h2 class="mb-4">Tell your city about your event!</h2>
   <form class="new-post-form">
     <div class="mb-3">
-      <label for="title-new-post" class="form-label">Title:</label>
+      <label for="title-new-post" class="form-label">Event Title:</label>
       <input
         type="text"
         class="form-control"
         id="title-new-post"
-        placeholder="Enter a title for your contribution"
+        placeholder="Enter a title for your event"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="date-new-post" class="form-label">Event Date:</label>
+      <input
+        type="date"
+        class="form-control"
+        id="title-new-post"
+        placeholder="Enter the date of your event"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="time-new-post" class="form-label">Event Time:</label>
+      <input
+        type="time"
+        class="form-control"
+        id="title-new-post"
+        placeholder="Enter the time of your event"
       />
     </div>
     
     <div class="mb-3">
-      <label for="content-new-cpost" class="form-label"> Content:</label>
+      <label for="content-new-cpost" class="form-label"> Details:</label>
       <textarea
         class="form-control"
         id="content-new-post"
@@ -21,7 +41,7 @@
       ></textarea>
     </div>
     <div class="mb-3">
-      <button type="submit" class="btn btn-primary">Create Post</button>
+      <button type="submit" class="btn btn-primary">Post Event</button>
     </div>
   </form>
 </div>
