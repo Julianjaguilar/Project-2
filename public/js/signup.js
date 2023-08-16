@@ -5,11 +5,12 @@ const thetechSignupFormHandler = async (event) => {
   const username = document.querySelector('#username').value.trim();
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
-
-  if (username && email && password) {
+  const state = document.querySelector('#state').value.trim();
+  console.log(state);
+  if (username && email && password && state) {
     const response = await fetch('/api/users/signup', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, email, password, state }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -26,4 +27,4 @@ const thetechSignupFormHandler = async (event) => {
 const chessSignupForm = document.querySelector('#signup-form');
 if (chessSignupForm) {
   chessSignupForm.addEventListener('submit', thetechSignupFormHandler);
-}
+};

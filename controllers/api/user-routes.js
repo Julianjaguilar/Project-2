@@ -21,12 +21,14 @@ router.get("/", (req, res) => {
 
 router.post("/signup", async (req, res) => {
   try {
-    const newUser = new User();
-    newUser.username = req.body.username;
+    console.log(req.body);
+    const userData = await User.create(req.body);
+    /*newUser.username = req.body.username;
     newUser.email = req.body.email;
     newUser.password = req.body.password;
+    newUser.state = req.body.state;
 
-    const userData = await newUser.save();
+    const userData = await newUser.save();*/
 
     req.session.save(() => {
       req.session.user_id = userData.id;

@@ -17,13 +17,28 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-   
-    content: {
+    venue: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    event_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    event_time: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+    details: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1],
       },
+    },
+    event_state: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     
     user_id: {
