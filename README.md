@@ -19,11 +19,13 @@ You and your group will use everything you’ve learned over the past six module
 
 
 Technologies Used -
-    *Heroku for Application deployment 
-    *Tailwind CSS
-    *Bootstrap CDN
-    *Node
-    *mySQL
-    
+    * Heroku for Application deployment 
+    * Tailwind CSS
+    * Bootstrap CDN
+    * Node
+    * MySQL
+
+
+
 <img width="832" alt="Screenshot 2023-08-16 at 4 12 39 PM" src="https://github.com/Julianjaguilar/Project-2/assets/127900035/e9b0e842-947e-4ef7-9817-d1068b74b8da">
 
