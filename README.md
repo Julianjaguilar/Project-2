@@ -35,8 +35,8 @@ ConcertBlog Connect is your ultimate companion for staying in tune with the dyna
 
 ## How to Get Started
 
-1. **Download and Install:** Visit our website to access ChatEvent.
-2. **Sign Up:** Create a user account to personalize your experience and gain access to all app features.
+1. **Visit our Web Page:** Visit our website to access ChatEvent.
+2. **Sign Up:** Create a user account to personalize your experience.
 3. **Explore Concerts:** Browse upcoming concerts and venue details to plan your next musical adventure.
 4. **Read and Write Blogs:** Dive into captivating concert blogs or share your own experiences to contribute to the community.
 5. **Connect and Engage:** Join discussions, comment on blogs, and connect with like-minded individuals who share your passion for live music.
