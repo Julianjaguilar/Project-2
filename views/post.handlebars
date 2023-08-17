@@ -1,8 +1,12 @@
 <main class="container mt-5">
   <article>
-    <h1>{{title}}</h1>
-    <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
-    <p>{{content}}</p>
+    <h1>{{title}}</h1> 
+    <p>Created by: {{user.username}}  |  Date: {{format_date createdAt}}</p>
+    <br>
+    <p>State: {{event_state}} <br> Venue: {{venue}} <br> Date: {{event_date}}</p>
+    <br>
+    <p>About this event: <br> {{details}}</p>
+    <br>
   </article>
   
   {{#if logged_in}}

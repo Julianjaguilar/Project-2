@@ -1,4 +1,3 @@
-// Import all packages and models
 const router = require("express").Router();
 const { Post, User, comment } = require("../models");
 const withAuth = require("../utils/auth");
@@ -8,36 +7,30 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   try {
         
-    // this will find all posts with associated usernames
+    // find all posts by username
     
     const postData = await Post.findAll({
       include: [{ model: User, attributes: ["username"] }],
     });
    
-    // this Convert post data  JavaScript object!!
+    // converts data to JSON object
     const posts = postData.map((post) => post.get({ plain: true }));
     
-    // this render homepage template and login status
+    // renders homepage given log in status
     res.render("homepage", {
       posts,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
         
-    // If there is an error!!
     res.status(500).json(err);
   }
 });
 
-// this will Route to render individual post page
-
+// routes to post with given id
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
-        
-    
-    // this will Find post by Id along will associated username and comments with associated usernames
-    
-    
+    // find post by primary key and includes username and comments 
         const postData = await Post.findByPk(req.params.id, {
       include: [
         { model: User, attributes: ["username"] },
@@ -48,29 +41,21 @@ router.get("/post/:id", withAuth, async (req, res) => {
       ],
     });
     
-    
-    // this will Convert post data to JavaScript object!!
-   
+    // post data to JSON object
     const post = postData.get({ plain: true });
     
-    
-    // this will Render post template data and login status
-    
-    
+    // render post page given login status
     res.render("post", {
       ...post,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-        
-    // If there is an error!
-   
     res.status(500).json(err);
   }
 });
 
 
-//This will render dashboard page with post and find all post by user
+//render dashboard with users posts
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
@@ -78,7 +63,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       where: { user_id: req.session.user_id },
       include: [{ model: User, attributes: ["username"] }],
     });
-    // Convert post data to plain JavaScript object
+    // post data to JSON object
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render("dashboard", {
@@ -90,7 +75,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-//This will render the login
+// render login page
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
@@ -100,7 +85,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-//This will render the sigup
+// render signup page
 
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
@@ -111,8 +96,7 @@ router.get("/signup", (req, res) => {
 });
 
 
-//this will render the new post page
-
+// render new post page
 
 router.get("/newpost", (req, res) => {
   if (req.session.logged_in) {
@@ -123,8 +107,7 @@ router.get("/newpost", (req, res) => {
 });
 
 
-//this will render the edit post page
-
+// render the edit post page
 
 router.get("/editpost/:id", async (req, res) => {
   try {
@@ -148,7 +131,5 @@ router.get("/editpost/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// this will module exports router
 
 module.exports = router;

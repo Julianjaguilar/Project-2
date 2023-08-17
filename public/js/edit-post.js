@@ -1,11 +1,10 @@
-// This wil Get the post ID from the endpoint
+// get post id from splitting endpoint
 const post_id = window.location.toString().split("/")[
   window.location.toString().split("/").length - 1
 ];
 
-// this is to Update the post
-
-const updateTechPostFormHandler = async (event) => {
+// update event post
+const updateEventPostFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector("#title-update-post").value.trim();
@@ -22,13 +21,13 @@ const updateTechPostFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace("/dashboard");
-      alert("Failed to update a post."); 
+      alert("Failed to update your post."); 
     }
   }
 };
 
-// this is to Delete the post
-const deleteTechPostFormHandler = async (event) => {
+// delete post
+const deleteEventPostFormHandler = async (event) => {
   event.preventDefault();
 
   const response = await fetch(`/api/posts/${post_id}`, {
@@ -43,14 +42,14 @@ const deleteTechPostFormHandler = async (event) => {
 };
 
 // Event listeners
-const updateTechPostButton = document.querySelector("#update-chess-post");
+const updateEventPostButton = document.querySelector("#update-event-post");
 
-if (updateTechPostButton) {
-  updateTechPostButton.addEventListener("click", updateTechPostFormHandler);
+if (updateEventPostButton) {
+  updateEventPostButton.addEventListener("click", updateEventPostFormHandler);
 }
 
-const deleteTechPostButton = document.querySelector("#delete-post");
+const deleteEventPostButton = document.querySelector("#delete-post");
 
-if (deleteTechPostButton) {
-  deleteTechPostButton.addEventListener("click", deleteTechPostFormHandler);
+if (deleteEventPostButton) {
+  deleteEventPostButton.addEventListener("click", deleteEventPostFormHandler);
 }

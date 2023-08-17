@@ -1,6 +1,6 @@
-// This will create new post public/js/new-post.js
+// create new post
 
-const newTechPostFormHandler = async (event) => {
+const newPostFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#title-new-post').value.trim();
@@ -26,8 +26,7 @@ const newTechPostFormHandler = async (event) => {
 };
 
 
-// The Event listeners
-const newChessPostForm = document.querySelector('.new-post-form');
-if (newChessPostForm) {
-  newChessPostForm.addEventListener('submit', newTechPostFormHandler);
+const newPostForm = document.querySelector('.new-post-form');
+if (newPostForm) {
+  newPostForm.addEventListener('submit', newPostFormHandler);
 };

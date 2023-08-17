@@ -11,4 +11,12 @@ module.exports = {
       
       return `${formattedDate} at ${formattedTime}`;
     },
+
+  format_event_date: (date) => {
+    const e = new Date (date);
+    const formattedDate = `${e.getMonth() + 1}/${e.getDate()}/${e.getFullYear()}`;
+
+    return `${formattedDate}`;
+
+  }
   };
