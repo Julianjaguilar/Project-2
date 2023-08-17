@@ -1,4 +1,4 @@
-// this Middleware function is  to check if user is logged in
+// middleware to check if they are logged in
 
 const withAuth = (req, res, next) => {
   if (!req.session.logged_in) {

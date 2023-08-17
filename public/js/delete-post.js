@@ -7,7 +7,7 @@ const deletePost = async (post_id) => {
   if (response.ok) {
     document.location.reload(); 
   } else {
-    alert("Failed to delete this post!!"); 
+    alert("Failed to delete this post."); 
   }
 };
 

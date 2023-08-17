@@ -1,4 +1,4 @@
-const newTechCommentFormHandler = async (event) => {
+const newCommentFormHandler = async (event) => {
   event.preventDefault();
 
   const post_id = parseInt(window.location.pathname.split('/').pop());
@@ -17,17 +17,13 @@ const newTechCommentFormHandler = async (event) => {
     } else {
       console.log('Response status:', response.status);
       console.log('Response text:', await response.text());
-      alert('comment Failed to be created!!'); 
+      alert('Comment not created, please try again.'); 
     }
   }
 };
 
 
-
-
-// Event listeners
-
-const newChessCommentForm = document.querySelector('.new-comment-form');
-if (newChessCommentForm) {
-  newChessCommentForm.addEventListener('submit', newTechCommentFormHandler);
+const newCommentForm = document.querySelector('.new-comment-form');
+if (newCommentForm) {
+  newCommentForm.addEventListener('submit', newCommentFormHandler);
 }

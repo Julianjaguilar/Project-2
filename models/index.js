@@ -1,9 +1,8 @@
-// Import the all  models
 const User = require("./User");
 const Post = require("./post");
 const comment = require("./comment");
 
-// lets define the relationships between  models
+// define relationships between models
 
 User.hasMany(Post, {
   
@@ -33,6 +32,5 @@ User.hasMany(comment, {
   foreignKey: "user_id",
 });
 
-// Export the models
 
 module.exports = { User, Post, comment };

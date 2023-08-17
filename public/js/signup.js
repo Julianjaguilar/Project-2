@@ -1,5 +1,5 @@
-// This is the signup request
-const thetechSignupFormHandler = async (event) => {
+// sign up handler
+const theSignupFormHandler = async (event) => {
   event.preventDefault();
 
   const username = document.querySelector('#username').value.trim();
@@ -17,14 +17,12 @@ const thetechSignupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/'); 
     } else {
-      alert('Sign up Failed Please try again with valide email and password.'); 
+      alert('Sign up falied, please try again.'); 
     }
   }
 };
 
-
-// Event listeners
-const chessSignupForm = document.querySelector('#signup-form');
-if (chessSignupForm) {
-  chessSignupForm.addEventListener('submit', thetechSignupFormHandler);
+const signupForm = document.querySelector('#signup-form');
+if (signupForm) {
+  signupForm.addEventListener('submit', theSignupFormHandler);
 };
