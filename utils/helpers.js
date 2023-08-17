@@ -12,8 +12,8 @@ module.exports = {
       return `${formattedDate} at ${formattedTime}`;
     },
 
-  format_event_date: (date) => {
-    const e = new Date (date);
+  format_event_date: (event_date) => {
+    const e = new Date (event_date);
     const formattedDate = `${e.getMonth() + 1}/${e.getDate()}/${e.getFullYear()}`;
 
     return `${formattedDate}`;
