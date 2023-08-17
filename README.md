@@ -52,7 +52,7 @@ Technologies Used -
     * MySQL
 
 
-Deployment Link : (https://chat-events-project2-993453318346.herokuapp.com/)
+Deployment Link : (https://chat-events-project2-e877e2935857.herokuapp.com/)
 
 
 <img width="832" alt="Screenshot 2023-08-16 at 4 12 39 PM" src="https://github.com/Julianjaguilar/Project-2/assets/127900035/e9b0e842-947e-4ef7-9817-d1068b74b8da">
